@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(30, 64, 175, 0.08);
+      background: #e0e7ff;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      cursor: zoom-in;
+      transition: box-shadow 0.2s;
+    }
+    .gallery img:hover {
+      box-shadow: 0 4px 16px rgba(30, 64, 175, 0.15);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 4px 32px rgba(30, 64, 175, 0.25);
+    }
+    .modal.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+  <div class="nav-brand">
+    <img class="logo" src="images/univlogo.png" alt="University Logo">
+    <a class="nav-logo" href="index.html">
+      UNIVERSITY OF SCIENCE AND TECHNOLOGY <br>
+      OF SOUTHERN PHILIPPINES
+    </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Curriculum.html">Curriculum</a>
+      <a href="Faculty.html">Faculty</a>
+      <a href="Gallery.html" class="active">Gallery</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+  </nav>
+  <main>
+    <h1>Gallery</h1>
+    <p>Our gallery showcases the innovative projects and creative works of our students in the Bachelor of Technology and Livelihood Education (BTLED) program. Each image represents the hard work and dedication of our students, highlighting their skills in various aspects of technology and livelihood education.</p>
+    <div class="gallery">
+      <img src="images/gallery13.jpg" alt="Project 13" onclick="openModal(this)">
+      <img src="images/gallery14.jpg" alt="Project 14" onclick="openModal(this)">
+      <img src="images/gallery11.jpg" alt="Project 11" onclick="openModal(this)">
+      <img src="images/gallery1.jpg" alt="Project 1" onclick="openModal(this)">
+      <img src="images/gallery2.jpg" alt="Project 2" onclick="openModal(this)">
+      <img src="images/gallery3.jpg" alt="Project 3" onclick="openModal(this)">
+      <img src="images/gallery4.jpg" alt="Project 4" onclick="openModal(this)">
+      <img src="images/gallery5.jpg" alt="Project 5" onclick="openModal(this)">
+      <img src="images/gallery6.jpg" alt="Project 6" onclick="openModal(this)">
+      <img src="images/gallery7.jpg" alt="Project 7" onclick="openModal(this)">
+      <img src="images/gallery8.jpg" alt="Project 8" onclick="openModal(this)">
+      <img src="images/gallery9.jpg" alt="Project 9" onclick="openModal(this)">
+      <img src="images/gallery10.jpg" alt="Project 10" onclick="openModal(this)">
+      <img src="images/gallery12.jpg" alt="Project 12" onclick="openModal(this)">
+      <img src="images/gallery15.jpg" alt="Project 15" onclick="openModal(this)">
+    </div>
+
+    <!-- Modal for zoomed image -->
+    <div id="modal" class="modal" onclick="closeModal()">
+      <img id="modal-img" src="" alt="Zoomed Image">
+    </div>
+  </main>
+  <script>
+    function openModal(img) {
+      document.getElementById('modal-img').src = img.src;
+      document.getElementById('modal').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+    // Optional: Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') closeModal();
+    });
+
+        // Store all gallery images and the current index
+    const galleryImages = Array.from(document.querySelectorAll('.gallery img'));
+    let currentIndex = -1;
+
+    function openModal(img) {
+      currentIndex = galleryImages.indexOf(img);
+      showImage(currentIndex);
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+
+    function showImage(index) {
+      const modalImg = document.getElementById('modal-img');
+      modalImg.src = galleryImages[index].src;
+      modalImg.alt = galleryImages[index].alt;
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+      const modal = document.getElementById('modal');
+      if (!modal.classList.contains('active')) return;
+
+      if (event.key === 'Escape') {
+        closeModal();
+      } else if (event.key === 'ArrowRight') {
+        // Next image
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        showImage(currentIndex);
+      } else if (event.key === 'ArrowLeft') {
+        // Previous image
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        showImage(currentIndex);
+      }
+    });
+  </script>
+</body>
+</html>

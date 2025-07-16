@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+  <div class="nav-brand">
+    <img class="logo" src="images/univlogo.png" alt="University Logo">
+    <a class="nav-logo" href="index.html">
+      UNIVERSITY OF SCIENCE AND TECHNOLOGY <br>
+      OF SOUTHERN PHILIPPINES
+    </a>
+  </div>
+    <button class="hamburger" id="hamburger-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="About.html">About</a>
+      <a href="Curriculum.html">Curriculum</a>
+      <a href="Faculty.html">Faculty</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+  </nav>
+  <main>
+    <h1>All about Bachelor of Technology and Livelihood Education (BTLED)</h1>
+    <p>Your gateway to modern advertising education. Explore our curriculum, meet our expert faculty, and discover how we prepare you for a successful career in advertising.</p>
+    <img src="images/Coverimage.jpg" alt="Cover Image" class="responsive-img">
+    <p>Join us in shaping the future of advertising with innovative teaching methods and hands-on experience. Our program combines creativity with technology to equip you with the skills needed in today's dynamic advertising landscape.</p>
+    <p>The Bachelor of Technology and Livelihood Education (BTLED) offers future educators a unique opportunity to specialize in real-world, skill-based fields aligned with the TLE (Technology and Livelihood Education) curriculum. With BTLED, you're not just learning to teach—you're training to lead, create, and empower.
+    Ready to take the next step? Explore our curriculum, meet our faculty, and see how we can help you achieve your career goals in advertising.</p><br><br>
+    <button class="btn" onclick="location.href='About.html'">Learn More</button>
+  </main>
+  <script>
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', function() {
+      navLinks.classList.toggle('open');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+    });
+  </script>
+</body>
+</html> 

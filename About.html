@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(images/background.png);
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+    }
+    .nav-brand .logo {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
+    .nav-logo {
+      color: #003366;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-decoration: none;
+      line-height: 1.2;
+    }
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+    .nav-links a {
+      color: #003366;
+      background: #e6edff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+    .nav-links a.active,
+    .nav-links a:hover {
+      background: fff;
+      color: #003366;
+      border-bottom: none;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    
+    .curriculum-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .curriculum-header h1 {
+      font-size: 2.5em;
+      color: #003366;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    .curriculum-header p {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 0;
+    }
+
+    .curriculum-header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 10px;
+}
+.curriculum-header-flex h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #003366;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.btled-logo {
+  width: 100px;
+  height: auto;
+  margin: 0;
+  border-radius: 30px;
+  margin-top: 10px;
+  opacity: 70%;
+}
+.btled-logo-secondary {
+  width: 120px;
+  height: auto;
+  margin-left: 24px;
+  border-radius: 30px;
+  /* Optional: add a subtle shadow or border if needed */
+}
+@media (max-width: 700px) {
+  .curriculum-header-flex {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .curriculum-header-flex h1 {
+    font-size: 1.5em;
+  }
+  .btled-logo {
+    width: 120px;
+  }
+  .btled-logo-secondary {
+    width: 80px;
+    margin-left: 0;
+  }
+}
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+      align-items: start;           /* Fixes uneven card heights */
+      min-height: 400px;            /* Keeps grid area balanced */
+      justify-content: center;      /* Optional: centers grid items */
+    }
+    .curriculum-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 24px 18px;
+      border-left: 5px solid #003366;
+      transition: box-shadow 0.2s;
+    }
+    .curriculum-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .curriculum-card h2 {
+      color: #003366;
+      margin-bottom: 12px;
+      font-size: 1.3em;
+    }
+    .curriculum-card ul {
+      margin-left: 18px;
+      color: #444;
+    }
+    .curriculum-card ul li {
+      margin-bottom: 7px;
+    }
+    @media (max-width: 600px) {
+      .curriculum-header h1 {
+        font-size: 1.5em;
+      }
+      main {
+        padding: 0 8px;
+      }
+    }
+    
+
+    
+  </style>
+
+</style>
+<body>
+  <nav>
+  <div class="nav-brand">
+    <img class="logo" src="images/univlogo.png" alt="University Logo">
+    <a class="nav-logo" href="index.html">
+      UNIVERSITY OF SCIENCE AND TECHNOLOGY <br>
+      OF SOUTHERN PHILIPPINES
+    </a>
+  </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="About.html" class="active">About</a>
+      <a href="Curriculum.html">Curriculum</a>
+      <a href="Faculty.html">Faculty</a>
+      <a href="Gallery.html">Gallery</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+  </nav> 
+  <main>
+    <div class="curriculum-header-flex">
+  <h1>What is BTLED?</h1>
+  <img src="images/LogoUpdated.jpg" alt="logo" class="btled-logo">
+</div>
+<div class="curriculum-header">
+  <p>
+    BTLED, or <strong>Bachelor of Technology and Livelihood Education</strong>, is a teacher education program designed to prepare future educators to teach Technology and Livelihood Education (TLE) in junior and senior high school.
+  </p>
+  <img src="images/about.jpg" alt="image">
+  <br>
+  <p>
+    <b>MISSION</b>: To guide organization members in their social and political aspects of life and to 
+    elevate them  academic abilities and competencies, thereby helping them evolve into 
+    proactive and proficient students within the council. <br>
+    <b>VISION</b>: An overarching student organization dedicated to carrying out responsibilities aimed 
+    at fostering the well-rounded  personal growth of university students.
+  </p>
+</div>
+    <div class="curriculum-grid">
+      <div class="curriculum-card">
+        <h2>Information and Communication Technology (ICT)</h2>
+        <ul>
+          <li>Computer Systems & Networking</li>
+          <li>Programming & Digital Literacy</li>
+          <li>Multimedia & Web Development</li>
+          <li>Technology Integration in Education</li>
+        </ul>
+      </div>
+      <div class="curriculum-card">
+        <h2>Home Economics</h2>
+        <ul>
+          <li>Food Preparation & Nutrition</li>
+          <li>Clothing & Textile</li>
+          <li>Home Management & Family Living</li>
+          <li>Entrepreneurship</li>
+        </ul>
+      </div>
+      <div class="curriculum-card">
+        <h2>Industrial Arts</h2>
+        <ul>
+          <li>Woodworking & Metalworking</li>
+          <li>Electronics & Drafting</li>
+          <li>Safety & Craftsmanship</li>
+          <li>Creative Design Projects</li>
+        </ul>
+      </div>
+      <div class="curriculum-card">
+        <h2>Agri-Fishery Arts</h2>
+        <ul>
+          <li>Agricultural Production</li>
+          <li>Fisheries & Horticulture</li>
+          <li>Farm Management</li>
+          <li>Sustainable Practices</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
